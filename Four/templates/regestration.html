@@ -1,0 +1,17 @@
+{% extends "Base.html" %}
+{% block body_block %}
+    {% if regestration%}
+        <h1>Registration was Succesful</h1>
+    {% else %}
+
+    <h1>Register here</h1>
+    <h3>Fill out this form</h3>
+    <form  enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    {{user_form.as_p }}
+    {{ profile_form.as_p }}
+        <input  class="btn btn-dark" value="submit" type="submit">
+        </form>
+
+      {% endif %}
+{% endblock %}
